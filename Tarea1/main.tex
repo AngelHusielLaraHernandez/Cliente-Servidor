@@ -183,29 +183,91 @@
 
 \begin{document}
 
-    \input{portada.tex}
+  \input{portada.tex}
 
 
-    \newpage
-    {\hypersetup{linkcolor=black}\tableofcontents}
-    \thispagestyle{empty}
-    
-    \newpage
+  \newpage
+  {\hypersetup{linkcolor=black}\tableofcontents}
+  \thispagestyle{empty}
+  
+  \newpage
 
-    \setcounter{page}{1}
-    \singlespacing
+  \setcounter{page}{1}
+  \singlespacing
 
-    \section{¿Que es un proceso?}
-    
+  \section{¿Que es un proceso?}
 
-    \section{¿Que es la imagen de un proceso?}
+  Un proceso directamente hablando en sistemas operativos, 
+  es una representacion de una instancia 
+  de un programa en ejecución. Normalmente un programa se refiere 
+  a un conjunto de instrucciones almacenadas en disco, no obstante, 
+  cuando estas pasan ahora a memoria y se ejecutan, es 
+  que se les considera ahora como proceso. 
+  
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3.5cm}|p{4.5cm}|p{4.5cm}|}
+        \hline
+        \textbf{Característica} & \textbf{Programa} & \textbf{Proceso} \\
+        \hline
+        Estado & Es una entidad pasiva. & Es una entidad activa durante su ejecución. \\
+        \hline
+        Ubicación & Generalmente se encuentra almacenado como un archivo en un medio de almacenamiento. & Se encuentra cargado en memoria mientras el sistema operativo lo ejecuta. \\
+        \hline
+        Recursos & Por sí mismo no utiliza recursos del procesador. & Utiliza recursos como memoria, tiempo de CPU y otros elementos asignados por el sistema operativo. \\
+        \hline
+    \end{tabular}
+    \caption{Principales diferencias entre un programa y un proceso}
+    \label{tab:programa_proceso}
+\end{table}
+
+  Ahora bien, un proceso tiene un espacio de direcciones virtuales
+  que tiene las intrucciones del programa, tambien consta de un estado 
+  en la CPU, un conjunto de registros, una pila de ejecución, un contador de programa,
+  y un conjunto de recursos del sistema que el proceso puede usar, como archivos abiertos,
+  memoria compartida, etc. 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{image/Procesos.png}
+    \caption{Espacio de direcciones de un proceso.}
+  \end{figure}
+
+  Los procesos son gestionados directamente por el sistema operativo,
+  es el encargado de crear, programar y eliminarlos, no obstante, tambien un proceso 
+  se puede comunicar con otro proceso, ya sea 
+  en la misma máquina o en otra (cliente-servidor), 
+  para esto se usan mecanismos de 
+  comunicación entre procesos (IPC), 
+  como tuberías, colas de mensajes, memoria compartida, etc.
+
+  \newpage
+
+  \section{¿Que es la imagen de un proceso?}
+
+  La imagen de un proceso es la representacion 
+  de varios elementos que conforman a un procesos que se esta ejecutando y que 
+  tiene la informacion necesaria para que el sistema operativo pueda gestionarlo,
+  estos elementos son, el programa ejecutable,
+  los datos asociados al proceso (estado de los registros), el contexto de la ejecucion, los datos del usuario. 
+
+  No obstante, la imagen del proceso tambien esta relacionado con la forma 
+  en que el propio programa se organiza en memoria, 
+  es por eso, que el espacio de direcciones del proceso tiene las siguientes 
+  regiones: 
+  \begin{enumerate}
+    \item El segmento de texto contiene las instrucciones de máquina del programa. 
+    \item El segmento de datos contiene datos estáticos inicializados y constantes.
+    \item El segmento BSS contiene datos estáticos no inicializados.
+  \end{enumerate}
+
+  BSS: Es un área de memoria reservada para 
+  aquellas variables no han sido inicializadas en tiempo de compilación y si en tiempo de ejecución. Su tamaño se conoce en tiempo de compilación y por eso size puede calcularlo.
 
 
-    \newpage
-
-    \thispagestyle{empty}
-    
-    % Impresión Referencias
-    \nocite{*}
-    \printbibliography[heading=bibintoc, title={Referencias}]
+  \thispagestyle{empty}
+  
+  % Impresión Referencias
+  \nocite{*}
+  \printbibliography[heading=bibintoc, title={Referencias}]
+  
 \end{document}

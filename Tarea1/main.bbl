@@ -19,198 +19,330 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
-    \entry{bautista-2023}{online}{}{}
-      \name{author}{5}{}{%
-        {{un=0,uniquepart=base,hash=ed52b0e3df7d29ab6e7e8f437902c9b4}{%
-           family={Bautista},
-           familyi={B\bibinitperiod},
-           given={María},
-           giveni={M\bibinitperiod},
+    \entry{franchitti-2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0aef4aad77f2968dad4a4de4d536146f}{%
+           family={Franchitti},
+           familyi={F\bibinitperiod},
+           given={Jean-Claude},
+           giveni={J\bibinithyphendelim C\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=e0c3d0bb696b808cb079da6334c9e0b0}{%
-           family={Martínez},
-           familyi={M\bibinitperiod},
-           given={Edgar},
-           giveni={E\bibinitperiod},
+      }
+      \strng{namehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{fullhash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{fullhashraw}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{bibnamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorbibnamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authornamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorfullhash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorfullhashraw}{0aef4aad77f2968dad4a4de4d536146f}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{month}{11}
+      \field{title}{6.3 Processes and Concurrency - Introduction to Computer Science}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://openstax.org/books/introduction-computer-science/pages/6-3-processes-and-concurrency
+      \endverb
+      \verb{url}
+      \verb https://openstax.org/books/introduction-computer-science/pages/6-3-processes-and-concurrency
+      \endverb
+    \endentry
+    \entry{gonzalez-1998}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=82d0b95a849837210385d2addd16eaf4}{%
+           family={González\bibnamedelimb Ruiz},
+           familyi={G\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=243ba4a4f34a11f27fd2575b2e439fe8}{%
-           family={León},
-           familyi={L\bibinitperiod},
-           given={Javier},
-           giveni={J\bibinitperiod},
+      }
+      \strng{namehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{fullhash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{fullhashraw}{82d0b95a849837210385d2addd16eaf4}
+      \strng{bibnamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorbibnamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authornamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorfullhash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorfullhashraw}{82d0b95a849837210385d2addd16eaf4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{month}{7}
+      \field{title}{Imagen de un proceso}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.hpca.ual.es/~vruiz/docencia/cursos/linux/html/node43.html
+      \endverb
+      \verb{url}
+      \verb https://www.hpca.ual.es/~vruiz/docencia/cursos/linux/html/node43.html
+      \endverb
+    \endentry
+    \entry{kosar-2012}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0c623b24f8488547b4fffac4e65b0f3f}{%
+           family={Kosar},
+           familyi={K\bibinitperiod},
+           given={Tevfik},
+           giveni={T\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=fbb98d6207ca6a84cda7ec1bc50b0836}{%
-           family={Quezada},
-           familyi={Q\bibinitperiod},
-           given={Cintia},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b4a25c8cdfc1b2b4717ea6f9f778457e}{%
-           family={Reyes},
-           familyi={R\bibinitperiod},
-           given={Granados},
+      }
+      \strng{namehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{fullhash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{fullhashraw}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{bibnamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorbibnamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authornamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorfullhash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorfullhashraw}{0c623b24f8488547b4fffac4e65b0f3f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{03-Processes (CSE 421/521 Operating Systems)}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cse.buffalo.edu/faculty/tkosar/cse421-521_fall2012/slides/03-Processes.pdf
+      \endverb
+      \verb{url}
+      \verb https://cse.buffalo.edu/faculty/tkosar/cse421-521_fall2012/slides/03-Processes.pdf
+      \endverb
+    \endentry
+    \entry{thiruvathukal-2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=51ff0cb7c11d6f9a975e628994f99881}{%
+           family={Thiruvathukal},
+           familyi={T\bibinitperiod},
+           given={George\bibnamedelimb K.},
            giveni={G\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{9570d4d49aad7fdbbcab0d93eb14f23b}
-      \strng{fullhash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{fullhashraw}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{bibnamehash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authorbibnamehash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authornamehash}{9570d4d49aad7fdbbcab0d93eb14f23b}
-      \strng{authorfullhash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authorfullhashraw}{43f4bd30c1c70cee0595e34894bf8783}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \strng{namehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{fullhash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{fullhashraw}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{bibnamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorbibnamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authornamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorfullhash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorfullhashraw}{51ff0cb7c11d6f9a975e628994f99881}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Manual de prácticas del laboratorio de Redes de Datos Seguras}
-      \field{year}{2023}
+      \field{day}{28}
+      \field{month}{5}
+      \field{title}{Introduction to Processes — Introduction to Operating Systems}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2026}
       \field{dateera}{ce}
+      \field{urldateera}{ce}
       \true{nocite}
       \verb{urlraw}
-      \verb https://redyseguridad.fi-b.unam.mx/Lab/manuales/MADO-31_LabRedesDatosSeguras.pdf
+      \verb https://os.cs.luc.edu/processes.html
       \endverb
       \verb{url}
-      \verb https://redyseguridad.fi-b.unam.mx/Lab/manuales/MADO-31_LabRedesDatosSeguras.pdf
-      \endverb
-    \endentry
-    \entry{ortegon-2025}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=eeea66cf1323d302309233e048279296}{%
-           family={Ortegon},
-           familyi={O\bibinitperiod},
-           given={Henry},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{eeea66cf1323d302309233e048279296}
-      \strng{fullhash}{eeea66cf1323d302309233e048279296}
-      \strng{fullhashraw}{eeea66cf1323d302309233e048279296}
-      \strng{bibnamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authorbibnamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authornamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authorfullhash}{eeea66cf1323d302309233e048279296}
-      \strng{authorfullhashraw}{eeea66cf1323d302309233e048279296}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{17}
-      \field{month}{1}
-      \field{title}{Subsistemas de Cableado Estructurado: Guía completa para empresas}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://enertedingenieria.com.co/subsistemas-de-cableado-estructurado/
-      \endverb
-      \verb{url}
-      \verb https://enertedingenieria.com.co/subsistemas-de-cableado-estructurado/
+      \verb https://os.cs.luc.edu/processes.html
       \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
-    \entry{bautista-2023}{online}{}{}
-      \name{author}{5}{}{%
-        {{un=0,uniquepart=base,hash=ed52b0e3df7d29ab6e7e8f437902c9b4}{%
-           family={Bautista},
-           familyi={B\bibinitperiod},
-           given={María},
-           giveni={M\bibinitperiod},
+    \entry{franchitti-2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0aef4aad77f2968dad4a4de4d536146f}{%
+           family={Franchitti},
+           familyi={F\bibinitperiod},
+           given={Jean-Claude},
+           giveni={J\bibinithyphendelim C\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=e0c3d0bb696b808cb079da6334c9e0b0}{%
-           family={Martínez},
-           familyi={M\bibinitperiod},
-           given={Edgar},
-           giveni={E\bibinitperiod},
+      }
+      \strng{namehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{fullhash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{fullhashraw}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{bibnamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorbibnamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authornamehash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorfullhash}{0aef4aad77f2968dad4a4de4d536146f}
+      \strng{authorfullhashraw}{0aef4aad77f2968dad4a4de4d536146f}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{month}{11}
+      \field{title}{6.3 Processes and Concurrency - Introduction to Computer Science}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://openstax.org/books/introduction-computer-science/pages/6-3-processes-and-concurrency
+      \endverb
+      \verb{url}
+      \verb https://openstax.org/books/introduction-computer-science/pages/6-3-processes-and-concurrency
+      \endverb
+    \endentry
+    \entry{gonzalez-1998}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=82d0b95a849837210385d2addd16eaf4}{%
+           family={González\bibnamedelimb Ruiz},
+           familyi={G\bibinitperiod},
+           given={Vicente},
+           giveni={V\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=243ba4a4f34a11f27fd2575b2e439fe8}{%
-           family={León},
-           familyi={L\bibinitperiod},
-           given={Javier},
-           giveni={J\bibinitperiod},
+      }
+      \strng{namehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{fullhash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{fullhashraw}{82d0b95a849837210385d2addd16eaf4}
+      \strng{bibnamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorbibnamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authornamehash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorfullhash}{82d0b95a849837210385d2addd16eaf4}
+      \strng{authorfullhashraw}{82d0b95a849837210385d2addd16eaf4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{month}{7}
+      \field{title}{Imagen de un proceso}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.hpca.ual.es/~vruiz/docencia/cursos/linux/html/node43.html
+      \endverb
+      \verb{url}
+      \verb https://www.hpca.ual.es/~vruiz/docencia/cursos/linux/html/node43.html
+      \endverb
+    \endentry
+    \entry{kosar-2012}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0c623b24f8488547b4fffac4e65b0f3f}{%
+           family={Kosar},
+           familyi={K\bibinitperiod},
+           given={Tevfik},
+           giveni={T\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=fbb98d6207ca6a84cda7ec1bc50b0836}{%
-           family={Quezada},
-           familyi={Q\bibinitperiod},
-           given={Cintia},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b4a25c8cdfc1b2b4717ea6f9f778457e}{%
-           family={Reyes},
-           familyi={R\bibinitperiod},
-           given={Granados},
+      }
+      \strng{namehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{fullhash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{fullhashraw}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{bibnamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorbibnamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authornamehash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorfullhash}{0c623b24f8488547b4fffac4e65b0f3f}
+      \strng{authorfullhashraw}{0c623b24f8488547b4fffac4e65b0f3f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{03-Processes (CSE 421/521 Operating Systems)}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cse.buffalo.edu/faculty/tkosar/cse421-521_fall2012/slides/03-Processes.pdf
+      \endverb
+      \verb{url}
+      \verb https://cse.buffalo.edu/faculty/tkosar/cse421-521_fall2012/slides/03-Processes.pdf
+      \endverb
+    \endentry
+    \entry{thiruvathukal-2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=51ff0cb7c11d6f9a975e628994f99881}{%
+           family={Thiruvathukal},
+           familyi={T\bibinitperiod},
+           given={George\bibnamedelimb K.},
            giveni={G\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{9570d4d49aad7fdbbcab0d93eb14f23b}
-      \strng{fullhash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{fullhashraw}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{bibnamehash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authorbibnamehash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authornamehash}{9570d4d49aad7fdbbcab0d93eb14f23b}
-      \strng{authorfullhash}{43f4bd30c1c70cee0595e34894bf8783}
-      \strng{authorfullhashraw}{43f4bd30c1c70cee0595e34894bf8783}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \strng{namehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{fullhash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{fullhashraw}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{bibnamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorbibnamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authornamehash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorfullhash}{51ff0cb7c11d6f9a975e628994f99881}
+      \strng{authorfullhashraw}{51ff0cb7c11d6f9a975e628994f99881}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Manual de prácticas del laboratorio de Redes de Datos Seguras}
-      \field{year}{2023}
+      \field{day}{28}
+      \field{month}{5}
+      \field{title}{Introduction to Processes — Introduction to Operating Systems}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2026}
       \field{dateera}{ce}
+      \field{urldateera}{ce}
       \true{nocite}
       \verb{urlraw}
-      \verb https://redyseguridad.fi-b.unam.mx/Lab/manuales/MADO-31_LabRedesDatosSeguras.pdf
+      \verb https://os.cs.luc.edu/processes.html
       \endverb
       \verb{url}
-      \verb https://redyseguridad.fi-b.unam.mx/Lab/manuales/MADO-31_LabRedesDatosSeguras.pdf
-      \endverb
-    \endentry
-    \entry{ortegon-2025}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=eeea66cf1323d302309233e048279296}{%
-           family={Ortegon},
-           familyi={O\bibinitperiod},
-           given={Henry},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{eeea66cf1323d302309233e048279296}
-      \strng{fullhash}{eeea66cf1323d302309233e048279296}
-      \strng{fullhashraw}{eeea66cf1323d302309233e048279296}
-      \strng{bibnamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authorbibnamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authornamehash}{eeea66cf1323d302309233e048279296}
-      \strng{authorfullhash}{eeea66cf1323d302309233e048279296}
-      \strng{authorfullhashraw}{eeea66cf1323d302309233e048279296}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{17}
-      \field{month}{1}
-      \field{title}{Subsistemas de Cableado Estructurado: Guía completa para empresas}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://enertedingenieria.com.co/subsistemas-de-cableado-estructurado/
-      \endverb
-      \verb{url}
-      \verb https://enertedingenieria.com.co/subsistemas-de-cableado-estructurado/
+      \verb https://os.cs.luc.edu/processes.html
       \endverb
     \endentry
   \enddatalist

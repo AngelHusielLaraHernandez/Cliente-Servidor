@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1787369804.68026 -1
-  "main.bcf" 1787369804.62979 134011 8218675f7551708631d3ce072e2da23f "pdflatex"
-  "referencias.bib" 1787367806.8539 639 0fada47d99fb64fc5d6d11d325836dd6 ""
+["biber main"] 1787446380.80148 "main.bcf" "main.bbl" "main" 1787446408.28731 0
+  "main.bcf" 1787446408.23463 134011 8218675f7551708631d3ce072e2da23f "pdflatex"
+  "referencias.bib" 1787446380.55704 1124 867d00255c28161d34e36c32534bc1d9 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1787369803.73394 "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/main.tex" "main.pdf" "main" 1787369804.68051 0
-  "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/main.tex" 1787369803.5318 5715 c74c4feb24d23b2df6107445ef1a2d7c ""
+["pdflatex"] 1787446407.33526 "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/Tarea1/main.tex" "main.pdf" "main" 1787446408.28756 0
+  "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/Tarea1/main.tex" 1787446407.15434 8840 62c1fb3a4a48e05e65911817018f8b53 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -33,6 +33,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2026/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
@@ -218,13 +219,14 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1782419003 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1774209607 3636776 dc5fa9b6b1453b9d196cd42edf876004 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "main.aux" 1787369804.62799 973 790dbdb157c7d21f8af8c604b9fb07de "pdflatex"
-  "main.bbl" 1787367842.17879 8436 da56eb6767506036f066d9b684df97c3 "biber main"
-  "main.out" 1787369804.62911 473 7cbc9fe36ba40018278390415501a009 "pdflatex"
-  "main.run.xml" 1787369804.63023 2360 e823dede0fdb354f7eff64774b1cfad0 "pdflatex"
-  "main.tex" 1787369803.5318 5715 c74c4feb24d23b2df6107445ef1a2d7c ""
-  "main.toc" 1787369804.63028 248 5d52fd0e0964c9b798d5f34a708dacf0 "pdflatex"
-  "portada.tex" 1787369250.52508 1325 bd5218a29f8330c3501ac7dd7fee2b31 ""
+  "image/Procesos.png" 1787438758.13041 173867 b3201974d1ab42cab6f0d5825e28e251 ""
+  "main.aux" 1787446408.23257 1682 5bfc00f936546a2f23ac20543fb34464 "pdflatex"
+  "main.bbl" 1787446381.84066 13504 521039d551f0277d49d5d33879a9ef96 "biber main"
+  "main.out" 1787446408.23392 473 a5bb888afe1b08d920f5e199110949fa "pdflatex"
+  "main.run.xml" 1787446408.23509 2360 e823dede0fdb354f7eff64774b1cfad0 "pdflatex"
+  "main.tex" 1787446407.15434 8840 62c1fb3a4a48e05e65911817018f8b53 ""
+  "main.toc" 1787446408.23513 248 04ebde289a453f39c5e7f01809a71350 "pdflatex"
+  "portada.tex" 1787437952.25859 1325 0750087ee3020c37be3ef8a47e3436f5 ""
   "portada_img/der.png" 1787367725.20908 210257 6d0c4d2ce4cceedcb4c586a3b72b8bc2 ""
   "portada_img/izq.png" 1787367725.20683 32490 e04d7053102a8639b2d7b450d226ab82 ""
   (generated)

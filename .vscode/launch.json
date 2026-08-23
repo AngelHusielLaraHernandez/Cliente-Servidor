@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/LaboratorioVirtual/tema1",
+      "program": "/Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/LaboratorioVirtual/tema1/build/Debug/outDebug"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-PWD /Users/angellara/Documents/NovenoSemestre/Cliente-Servidor
+PWD /Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/Tarea1
 INPUT /usr/local/texlive/2026/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/main.tex
+INPUT /Users/angellara/Documents/NovenoSemestre/Cliente-Servidor/Tarea1/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
@@ -426,6 +426,11 @@ INPUT ./main.toc
 INPUT main.toc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT main.toc
+INPUT ./image/Procesos.png
+INPUT ./image/Procesos.png
+INPUT ./image/Procesos.png
+INPUT ./image/Procesos.png
+INPUT ./image/Procesos.png
 INPUT ./portada_img/der.png
 INPUT ./portada_img/der.png
 INPUT ./portada_img/der.png
@@ -445,4 +450,5 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
