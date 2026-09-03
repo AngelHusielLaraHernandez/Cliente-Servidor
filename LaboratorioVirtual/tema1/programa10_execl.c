@@ -15,7 +15,7 @@ int main(void)
   // con NULL se indica que se llego al final de la lista de argumentos
   // Si execl falla devuelve -1 y entra al if por lo que termina
   // con exit(EXIT_FAILURE)
-  if( execl("/bin/lsa", "/bin/lsa", "-l", "/", NULL) == -1)
+  if( execl("/bin/ls", "/bin/ls", "-l", "/", NULL) == -1)
   {
     printf("execl genero error y devolvio -1\n");
     perror("execl");
