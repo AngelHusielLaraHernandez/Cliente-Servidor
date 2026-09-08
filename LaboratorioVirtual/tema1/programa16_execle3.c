@@ -20,8 +20,8 @@ int main(void)
   char *variables_entorno[] = { "PATH=/bin:/usr/bin", "USER=jose", "MI_VARIABLE=acs", NULL };
   printf( "el valor de la variable de entorno USER es: %s\n", getenv("USER") );
   printf( "el valor de la variable de entorno MI_VARIABLE es: %s\n", getenv("MI_VARIABLE") );
-  printf( "ahora ejecutando ./programa13_getenv_user2, los valores de las variables de entorno USER y MI_VARIABLE van a cambiar solo para esta ejecucion\n" );
-  if( execle("./programa13_getenv_user2", "./programa13_getenv_user2", NULL, variables_entorno) == -1)
+  printf( "ahora ejecutando ./programa13, los valores de las variables de entorno USER y MI_VARIABLE van a cambiar solo para esta ejecucion\n" );
+  if( execle("./programa13", "./programa13", NULL, variables_entorno) == -1)
   {
     printf("execle genero error y devolvio -1\n");
     perror("execle");
