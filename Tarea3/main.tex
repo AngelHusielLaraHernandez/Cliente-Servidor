@@ -1,0 +1,435 @@
+\documentclass[letterpaper,11pt]{article}
+
+% --- PAQUETES DE IDIOMA
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{iftex}
+
+\usepackage{pdfpages}
+
+% --- PAQUETES MATEMÁTICOS --
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{mathrsfs}
+
+% --- PAQUETES GRÁFICOS Y DE DISEÑO ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{subcaption}
+\usepackage[table]{xcolor}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, shapes.multipart, positioning, arrows.meta, calc, shadows, decorations.pathreplacing,babel}
+
+% --- LISTAS ---
+\usepackage{enumitem}
+
+% --- PAQUETES DE CÓDIGO ---
+\usepackage{listings}
+% Configuración del estilo de listings
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}   
+\definecolor{keyword}{rgb}{0.0,0.2,0.6}     
+\definecolor{comment}{rgb}{0.25,0.5,0.35}   
+\definecolor{string}{rgb}{0.6,0.0,0.0}      
+\definecolor{number}{rgb}{0.5,0.0,0.5}      
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstset{
+  backgroundcolor=\color{backcolour},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{codepurple},
+  commentstyle=\color{codegray}\itshape,
+  numbers=left,
+  numberstyle=\tiny\color{codegray},
+  frame=single,
+  rulecolor=\color{black},
+  breaklines=true,
+  tabsize=4,
+  showstringspaces=false,
+  literate={á}{{\'a}}1
+           {é}{{\'e}}1
+           {í}{{\'i}}1
+           {ó}{{\'o}}1
+           {ú}{{\'u}}1
+           {Á}{{\'A}}1
+           {É}{{\'E}}1
+           {Í}{{\'I}}1
+           {Ó}{{\'O}}1
+           {Ú}{{\'U}}1
+           {ñ}{{\~n}}1
+           {Ñ}{{\~N}}1
+           {¿}{{\textquestiondown}}1
+           {¡}{{\textexclamdown}}1
+}
+
+% Estilo para código en C
+\lstdefinestyle{cstyle}{
+  language=C,
+  backgroundcolor=\color{backcolour},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+    keywordstyle=[2]\color{yellow!70!orange}\bfseries,
+    morekeywords=[2]{MPI_Init,MPI_Comm_size,MPI_Comm_rank,MPI_Send,MPI_Recv,MPI_Scatter,MPI_Gather,MPI_Bcast,MPI_Reduce,MPI_Finalize},
+    emph={printf},
+    emphstyle=\color{blue}\bfseries,
+  stringstyle=\color{codepurple},
+  commentstyle=\color{codegray}\itshape,
+  numbers=left,
+  numberstyle=\tiny\color{codegray},
+  frame=single,
+  rulecolor=\color{black},
+  breaklines=true,
+  tabsize=4,
+  showstringspaces=false
+}
+
+% Definición del lenguaje Python para listings
+\lstdefinelanguage[LAB]{Python}{
+    morekeywords={False, None, True, and, as, assert, async, await, break,
+                                class, continue, def, del, elif, else, except, finally,
+                                for, from, global, if, import, in, is, lambda, nonlocal,
+                                not, or, pass, raise, return, try, while, with, yield,
+                                machine, Pin, PWM, ADC, Timer, sleep_ms, sleep_us},
+    morecomment=[l]{\#},
+    morestring=[b]",
+    morestring=[b]',
+    sensitive=true
+}
+
+% Estilo para salidas de consola/terminal
+\lstdefinestyle{output}{
+  backgroundcolor=\color{black!5},
+  basicstyle=\ttfamily\footnotesize,
+  numbers=none,
+  frame=single,
+  rulecolor=\color{black!30},
+  breaklines=true,
+  tabsize=4,
+  showstringspaces=false,
+  xleftmargin=0.5cm,
+  xrightmargin=0.5cm
+}
+
+% --- ESTILOS PARA DIAGRAMAS DE FLUJO (TIKZ) ---
+\tikzset{
+  startstop/.style={rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30},
+  process/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30},
+  decision/.style={diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30},
+  io/.style={trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30},
+  arrow/.style={thick,->,>=stealth}
+}
+
+
+\definecolor{azulresultado}{HTML}{0072C6}
+\definecolor{rojoacarreo}{HTML}{FF0000}
+
+% --- RUTAS DE IMÁGENES ---
+\graphicspath{{img/}{portada_img/}}
+
+\definecolor{armblue}{RGB}{0, 113, 188}
+
+% --- ÍNDICE CON PUNTOS ---
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% --- CONFIGURACIÓN DE PÁGINA (GEOMETRÍA) ---
+\usepackage[
+    left=25mm, 
+    right=25mm,
+    top=35mm,
+    bottom=30mm,
+    headheight=77pt, 
+    papersize={21.59cm,27.94cm}
+]{geometry}
+
+% --- FORMATO DE TEXTO ---
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{parskip} 
+\usepackage{lipsum}  
+
+% --- VARIABLES GLOBALES ---
+\newcommand{\materia}{}
+
+% --- ENCABEZADOS Y PIES DE PÁGINA ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{\includegraphics[height=1.5cm]{portada_img/der.png}}
+\fancyhead[R]{\includegraphics[height=1.5cm]{portada_img/izq.png}}
+\fancyfoot[C]{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0pt}  
+
+% --- BIBLIOGRAFÍA ---
+%\usepackage[backend=biber, style=apa, sortcites, url=true]{biblatex}
+%\addbibresource{referencias.bib}
+
+% --- HIPERVÍNCULOS ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+\begin{document}
+
+\input{portada.tex}
+
+\newpage
+{\hypersetup{linkcolor=black}\tableofcontents}
+\thispagestyle{empty}
+
+\newpage
+
+\setcounter{page}{1}
+\singlespacing
+
+\section{Actividad 1:}
+
+\begin{enumerate}[label=\alph*)]
+  \item comenta detalladamente ambos programas 
+  \begin{enumerate}[label=\arabic*.]
+    \item Programa 20\_myecho.c comentado: 
+    \begin{lstlisting}[style=cstyle, caption={Programa 20\_myecho.c comentado}, label={lst:programa20_myecho_comentado}]
+    /*
+    * Muestra cómo en la terminal se pasan los argumentos 
+    * hacia la función main del proceso.
+    */
+
+    #include <stdio.h>   
+    #include <stdlib.h>  
+
+    // main recibe el número de argumentos (argc) y el vector de cadenas (argv)
+    int main(int argc, char *argv[])
+    {
+      int j; // Variable iteradora para recorrer el arreglo de argumentos
+
+      // Itera desde el índice 0 hasta argc - 1
+      for( j = 0; j < argc; j++ )
+      {
+        // Imprime el índice actual y la cadena correspondiente al argumento
+        printf("argv[%d]: %s\n", j, argv[j]);
+      }
+
+      // Termina el proceso exitosamente devolviendo un código 0 al SO
+      exit( EXIT_SUCCESS );
+    }
+    \end{lstlisting}
+    \item Programa21\_execve.c comentado:
+    \begin{lstlisting}[style=cstyle, caption={Programa 21\_execve.c comentado}, label={lst:programa21_execve_comentado}]
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <unistd.h>
+
+  int main(int argc, char *argv[])
+  {
+    //Al iniciar se decalra un arreglo de cadenas de caracteres (punteros a char) llamado newargv, que contiene cinco elementos: NULL, "hola", "mundo", "buen", "dia" y NULL, donde al ser el primer elemento NULL, se indica que no hay un nombre de programa especificado para ejecutar. Los elementos "hola", "mundo", "buen" y "dia" son los argumentos que se pasarán al programa que se ejecutará.
+    char *newargv[] = { NULL, "hola", "mundo", "buen", "dia",  NULL };
+
+    //la sentencia de la condicional es por que se espera que el programa se ejecute con un argumento adicional, que es el nombre del archivo a ejecutar. Si no se proporciona exactamente un argumento (es decir, si argc no es igual a 2), se imprime un mensaje de error en la salida estándar de error (stderr) y sale del programa automaticamente.
+    if( argc != 2 )
+    {
+      //Aqui es donde se imprime el mensaje de error en la salida estándar de error (stderr) indicando la sintaxis correcta para ejecutar el programa. Se utiliza fprintf para formatear el mensaje, donde argv[0] representa el nombre del programa que se está ejecutando. Luego, se llama a exit con EXIT_FAILURE para indicar que el programa terminó con un error.
+      fprintf( stderr, "La sintaxis es: %s <archivo-a-ejecutar>\n", argv[0] );
+      //Finalmente, se llama a exit con EXIT_FAILURE para indicar que el programa terminó con un error. Esto asegura que el programa no continúe ejecutándose si no se proporciona el argumento esperado.
+      exit( EXIT_FAILURE );
+    }
+
+    // ESTA SENTENCIA ES MUY IMPORTANTE!
+    // QUE HACE ESTA SENTENCIA? 
+    // La sentencia newargv[0] = argv[1]; asigna el valor del segundo argumento pasado al programa (argv[1]) al primer elemento del arreglo newargv. Esto significa que el nombre del archivo a ejecutar se establece como el primer argumento para la función execve, que se utilizará para ejecutar el programa especificado por argv[1].
+    //Si lo queremos ver en terminal seria: /.programa# hola mundo buen dia. asi se veria en terminal.
+    newargv[0] = argv[1];
+
+    // La función execve se utiliza para reemplazar el proceso actual con un nuevo programa. En este caso, se pasa el nombre del archivo a ejecutar (argv[1]), el arreglo de argumentos (newargv) y NULL para indicar que no se pasan variables de entorno adicionales. Si la llamada a execve tiene éxito, el proceso actual se reemplaza por el nuevo programa y no se ejecuta ninguna instrucción posterior a esta llamada.
+    execve( argv[1], newargv, NULL );
+    
+    //Aunque esta sentencia le falta un if para que no se ejecute, actuakmente se puede ejecutar, por que 
+    //esta fuera de la juridisccion de execve, por lo que si execve falla, se ejecutará esta sentencia.
+    //lo que significan estas 3 lineas es: si la llamada a execve falla, se imprimirá un mensaje de error y se saldrá del programa.
+    printf("Esta sentencia no se ejecuta\n");
+    //perror imprime un mensaje de error en la salida estándar de error (stderr) que describe el error ocurrido durante la llamada a execve. Esto ayuda a identificar la causa del fallo.
+    perror("execve");
+    exit( EXIT_FAILURE ); 
+  }    
+    \end{lstlisting}
+  \end{enumerate}
+  \item \textbf{comprueba que el programa 20 (myecho) se puede ejecutar desde linea de comandos, pasando los argumentos que gustes.}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image/image1.png}
+    \caption{Ejecución del programa 20\_myecho.c desde la línea de comandos con argumentos.}
+  \end{figure}
+  \item \textbf{En una segunda ejecución, pasa tu apellidopaterno apellidomaterno nombre(s). Por ejemplo: }
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image/image2.png}
+    \caption{Ejecución del programa 20\_myecho.c desde la línea de comandos con argumentos de nombre y apellidos.}
+  \end{figure}
+
+  \newpage
+  \item \textbf{Al comentar el programa 21, modifica la llamada a exec para que quede en un bloque if, como lo vimos en los programas de clase, con una sentencia exit(EXIT\_FAILURE): }
+  
+  \begin{lstlisting}[style=cstyle, caption={Programa 21\_execve.c comentado}, label={lst:programa21_execve_comentado}]
+#include <stdio.h>   
+#include <stdlib.h> 
+#include <unistd.h> 
+
+int main(int argc, char *argv[])
+{
+  //Al iniciar se decalra un arreglo de cadenas de caracteres (punteros a char) llamado newargv, que contiene cinco elementos: NULL, "hola", "mundo", "buen", "dia" y NULL, donde al ser el primer elemento NULL, se indica que no hay un nombre de programa especificado para ejecutar. Los elementos "hola", "mundo", "buen" y "dia" son los argumentos que se pasarán al programa que se ejecutará.
+  char *newargv[] = { NULL, "hola", "mundo", "buen", "dia",  NULL };
+
+  //la sentencia de la condicional es por que se espera que el programa se ejecute con un argumento adicional, que es el nombre del archivo a ejecutar. Si no se proporciona exactamente un argumento (es decir, si argc no es igual a 2), se imprime un mensaje de error en la salida estándar de error (stderr) y sale del programa automaticamente.
+  if( argc != 2 )
+  {
+    //Aqui es donde se imprime el mensaje de error en la salida estándar de error (stderr) indicando la sintaxis correcta para ejecutar el programa. Se utiliza fprintf para formatear el mensaje, donde argv[0] representa el nombre del programa que se está ejecutando. Luego, se llama a exit con EXIT_FAILURE para indicar que el programa terminó con un error.
+    fprintf( stderr, "La sintaxis es: %s <archivo-a-ejecutar>\n", argv[0] );
+    //Finalmente, se llama a exit con EXIT_FAILURE para indicar que el programa terminó con un error. Esto asegura que el programa no continúe ejecutándose si no se proporciona el argumento esperado.
+    exit( EXIT_FAILURE );
+  }
+
+  /*
+   * Algo que no mencione anteriormente, fue que, 
+   * argv[0] almacena el nombre del ejecutable.
+   * La sentencia newargv[0] = argv[1]; asigna el valor del segundo argumento pasado al programa (argv[1]) al primer elemento del arreglo newargv. Esto significa que el nombre del archivo a ejecutar se establece como el primer argumento para la función execve, que se utilizará para ejecutar el programa especificado por argv[1].
+   */
+  newargv[0] = argv[1];
+
+  /*
+   * LLAMADA A execve DENTRO DE UN BLOQUE IF:
+   * Si execve tiene éxito, la imagen de memoria del proceso se sustituye
+   * y esta función NUNCA retorna.
+   * Si execve falla, retorna -1, por lo que entra al if, imprime el error
+   * del sistema y concluye con exit(EXIT_FAILURE).
+   */
+  if ( execve( argv[1], newargv, NULL ) == -1 )
+  {
+    perror("Error en llamada al sistema execve");
+    exit( EXIT_FAILURE );
+  }
+
+  /*
+   * Gracias al bloque if con exit(EXIT_FAILURE), este punto es
+   * completamente inalcanzable, tanto si execve tiene éxito como si falla.
+   */
+  printf("Esta sentencia no se ejecuta\n");
+  return 0;
+}
+  \end{lstlisting}
+
+  \item \textbf{Ejecuta el programa 20 llamándolo desde el programa 21 }
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image/image3.png}
+    \caption{Ejecución del programa 20\_myecho.c desde el programa 21\_execve.c.}
+  \end{figure}
+  Lo que vemos aqui es que directamente la sentencia que se tenia en el argumento de newargcv, se le paso a la consolta de execve, lo que hizo 
+  que el programa 20 fuera el que imprimiera toda esa sentencia de hola mundo buen dia, y no el programa 21, por que execve reemplaza la imagen de memoria del proceso actual con la del nuevo programa, por lo que el flujo de ejecución del programa 21 se detiene y el control se transfiere al programa 20, que luego imprime los argumentos proporcionados.
+\end{enumerate}
+
+\newpage
+\section{Actividad 2}
+
+\textbf{Toma el programa 23 y coméntalo detalladamente: }
+\begin{lstlisting}[style=cstyle, caption={Programa 23\_fork-exec.c comentado}, label={lst:programa23_fork-exec_comentado}]
+
+#include <stdio.h>      
+#include <stdlib.h>    
+#include <sys/types.h>  
+#include <unistd.h>     
+
+/*
+
+ * El proposito de esta funcion es que es duplicar el proceso llamador mediante fork() y ejecuta un nuevo
+ * y lo que hara el proceso hijo es usar execvp().
+ * lo que se le pasa a la funcion es:
+ *   - program: Nombre o ruta del programa a ejecutar (ej. "ls").
+ *   - arg_list: Lista de argumentos terminada en NULL.
+ * y al final lo que nos dara es el PID del proceso hijo al proceso padre.:
+ */
+int spawn (char* program, char** arg_list)
+{
+  pid_t child_pid;
+
+  // Clona el proceso actual creando un proceso hijo
+  child_pid = fork ();
+
+  if (child_pid != 0)
+  {
+    // Bloque ejecutado por el proceso PADRE (child_pid contiene el PID del hijo)
+    return child_pid;
+  }
+  else
+  {
+    // Bloque ejecutado por el proceso HIJO esto es cuando el proceso hijo es creado osea un child_pid == 0
+
+    /*
+     * Si execvp() tiene éxito, la imagen del hijo es reemplazada por el programa
+     * y jamás llega a la línea siguiente.
+     * Si falla, retorna -1, se procesa el error y finaliza con exit(EXIT_FAILURE).
+     */
+    if ( execvp (program, arg_list) == -1 )
+    {
+      perror ("Ocurrió un error al ejecutar execvp");
+      exit( EXIT_FAILURE ); // Termina el proceso hijo con estado de error
+    }
+
+    // este return se pone, por que si execvp falla, el proceso hijo no termina y continua ejecutando el código, por lo que se pone un return 1 para indicar que hubo un error en la ejecución del programa.
+    return 1;
+  }
+}
+
+int main ()
+{
+  // Lista de argumentos para el comando "ls -l /"
+  // arg_list[0] es el nombre del comando
+  // El último elemento debe ser NULL como final de la lista
+  char* arg_list[] = {
+    "ls",
+    "-l",
+    "/",
+    NULL
+  };
+
+  // El padre crea al hijo y le indica que ejecute "ls" con sus argumentos
+  spawn ("ls", arg_list);
+
+  // El proceso padre continúa inmediatamente de forma concurrente
+  printf ("Termina el proceso padre\n");
+
+  return 0;
+}
+\end{lstlisting}
+
+\textbf{Compila y ejecuta. Agrega la captura de pantalla de la ejecución. }
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image/image4.png}
+    \caption{Ejecución del programa 23\_fork-exec.c.}
+\end{figure}
+
+Ahora bien, ya que el proceso padre no invoca 
+la llamada wait() o waitpid(), 
+el proceso padre y el proceso hijo compiten por
+la salida en la terminal, esto 
+lo que provocara es que la línea Termina el proceso 
+padre se imprima antes, en medio o al final de la salida del comando ls -l /.
+
+
+% Impresión Referencias
+%\nocite{*}
+%\printbibliography[heading=bibintoc, title={Referencias}]
+
+\end{document}
