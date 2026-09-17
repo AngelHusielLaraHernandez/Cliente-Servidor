@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <wait.h>
+#include <sys/wait.h>
 #include <signal.h>
 
 // La sentencia wait(NULL) en sistemas Unix/Linux se utiliza para que un proceso padre espere a que cualquiera de sus hijos termine.
