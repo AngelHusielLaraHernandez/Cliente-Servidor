@@ -9,7 +9,7 @@ una estructura hostent que contiene, entre otras cosas, la direccion IP asociada
 #include <arpa/inet.h>
 
 int main() {
-    const char *hostname = "www.google.com";
+    const char *hostname = "www.Cloudflare.com";
     struct hostent *he;
     struct in_addr **addr_list;
 
