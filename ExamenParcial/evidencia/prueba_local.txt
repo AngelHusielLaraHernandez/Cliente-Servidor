@@ -1,0 +1,28 @@
+PRUEBA LOCAL REAL DEL EXAMEN PARCIAL
+Sistema: macOS. Servidor y cliente ejecutados en la misma Mac.
+Entrada del nombre: escrita en la terminal interactiva del cliente.
+
+TERMINAL DEL SERVIDOR
+$ ./bin/servidor_examen_parcial 4898
+Servidor iniciado en el puerto 4898.
+Esperando la conexion del cliente...
+IP del cliente: 127.0.0.1
+Nombre recibido: LARA HERNANDEZ ANGEL HUSIEL
+Respuesta enviada: Registraste exitosamente tu nombre!
+Servidor terminado.
+
+Estado de salida: 0
+
+TERMINAL DEL CLIENTE
+$ ./bin/cliente_examen_parcial 127.0.0.1 4898
+Conectado al servidor 127.0.0.1:4898.
+Introduce tus apellidos y nombre(s): LARA HERNANDEZ ANGEL HUSIEL
+Respuesta del servidor: Registraste exitosamente tu nombre!
+Cliente terminado.
+
+Estado de salida: 0
+
+Este archivo contiene la salida de los procesos. No sustituye la captura
+de pantalla de las dos terminales solicitada en el examen.
+No se realizo la prueba contra el servidor externo del profesor.
+

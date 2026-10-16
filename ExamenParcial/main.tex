@@ -1,0 +1,102 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage[
+    left=25mm,
+    right=25mm,
+    top=35mm,
+    bottom=30mm,
+    headheight=77pt,
+    papersize={21.59cm,27.94cm}
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1.5cm]{portada_img/der.png}}
+\fancyhead[R]{\includegraphics[height=1.5cm]{portada_img/izq.png}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+\lstdefinestyle{output}{
+    backgroundcolor=\color{black!5},
+    basicstyle=\ttfamily\footnotesize,
+    numbers=none,
+    frame=single,
+    rulecolor=\color{black!30},
+    breaklines=true,
+    showstringspaces=false,
+    xleftmargin=0.5cm,
+    xrightmargin=0.5cm
+}
+\newcommand{\captura}[3]{%
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,height=0.61\textheight,keepaspectratio]{\detokenize{image/#1}}
+    \caption{#2}\label{#3}
+\end{figure}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\input{Portada.tex}
+\newpage
+{\hypersetup{linkcolor=black}\tableofcontents}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+\hypersetup{pageanchor=true}
+\singlespacing
+
+\section{Prueba local}
+Lo que se modificó fue que el cliente enviara primero mi nombre, leído desde el teclado con \texttt{fgets()}, y después el servidor respondiera. Además de eso, 
+el puerto se recibe desde la línea de comandos y se utiliza \texttt{htons()} para convertirlo al orden de bytes de la red.
+
+
+\begin{lstlisting}[style=output]
+./servidor_examen_parcial 4898
+./cliente_examen_parcial 127.0.0.1 4898
+\end{lstlisting}
+
+\captura{Captura de pantalla 2026-10-15 a la(s) 12.29.03 p.m..png}{Prueba local del cliente y el servidor en la Mac.}{fig:prueba-local}
+
+Lo que vemos aquí es que el servidor, en la terminal inferior, mostró la IP \texttt{127.0.0.1} y el nombre \texttt{Lara Hernandez Angel Husiel}. Por otra parte, el cliente recibió la respuesta \texttt{Registraste exitosamente tu nombre!}. Después de esto, ambos programas terminaron.
+
+\newpage
+\section{Conexión al servidor del profesor}
+Ahora bien, para esta prueba se ejecutó el cliente apuntando al servidor \texttt{132.248.59.6}, en el puerto 4898. Se escribió mi nombre desde el teclado y se recibió la respuesta de registro exitoso. También se ejecutó \texttt{date} en la misma terminal para mostrar la fecha y hora.
+\begin{lstlisting}[style=output]
+./cliente_examen_parcial 132.248.59.6 4898
+date
+\end{lstlisting}
+
+\subsection{Aclaración sobre las dos conexiones:}
+Una disculpa, por error me conecté dos veces al servidor y envié mi nombre en ambas ocasiones. Una conexión la realicé desde la red del laboratorio de iOS y la otra desde PC Puma, por lo que se generaron dos registros desde direcciones IP diferentes. Por este motivo incluyo las dos capturas.
+
+\captura{Captura de pantalla 2026-10-15 a la(s) 12.24.44 p.m..png}{Primera conexión al servidor del profesor y salida de date.}{fig:primera-remota}
+
+\newpage
+\subsection{Segunda captura de la conexión:}
+En esta captura también aparece la conexión al servidor con la respuesta de registro exitoso. Debajo se conserva la prueba local y la salida de \texttt{date} en la misma terminal.
+
+\captura{Captura de pantalla 2026-10-15 a la(s) 12.32.32 p.m..png}{Segunda captura de la conexión al servidor del profesor y salida de date.}{fig:segunda-remota}
+
+
+\end{document}
