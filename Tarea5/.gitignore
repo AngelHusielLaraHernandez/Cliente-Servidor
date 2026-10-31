@@ -1,0 +1,11 @@
+/code/sniffer
+/code/programa04_servidor_internet
+/code/programa04_cliente_internet
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+.DS_Store
