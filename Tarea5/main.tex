@@ -50,115 +50,66 @@
 \usepackage{xurl}
 \newcommand{\captura}[2]{%
 \begin{figure}[H]\centering
-\IfFileExists{image/#1}{%
-\includegraphics[width=\textwidth,height=0.57\textheight,keepaspectratio]{image/#1}}{%
-\fbox{\parbox[c][2cm][c]{0.9\textwidth}{\centering Evidencia pendiente de la prueba en Linux:\\ \texttt{\detokenize{#1}}}}}
+\includegraphics[width=\textwidth,height=0.57\textheight,keepaspectratio]{img/#1}
 \caption{#2}\end{figure}}
 
 \begin{document}
 \hypersetup{pageanchor=false}
 \input{Portada.tex}
 \newpage
-{\hypersetup{linkcolor=black}\tableofcontents}
-\thispagestyle{empty}
-\newpage
 \setcounter{page}{1}
 \hypersetup{pageanchor=true}
 \singlespacing
 
-\section{Objetivo de la práctica}
-Para el caso de esta tarea se utiliza el programa \texttt{sniffer.c} y el par de programas 04 del tema 3. La intención es observar cómo el servidor envía una frase al cliente y cómo el sniffer permite leer ese mismo texto dentro del tráfico TCP del puerto 4898.
 
-\textbf{Estado del documento:} la prueba del sniffer en Linux y las capturas están pendientes. Los resultados que se describen más adelante son los esperados; todavía no corresponden a una captura realizada.
-
-\subsection{Funcionamiento del sniffer:}
-Ahora bien, el sniffer utiliza \texttt{AF\_PACKET} y \texttt{SOCK\_RAW} para recibir las tramas con su cabecera de enlace. Primero revisa Ethernet, después IPv4 y por último TCP. Para calcular dónde comienza el mensaje toma en cuenta las longitudes de las cabeceras IP y TCP, ya que pueden variar.
-
-El filtro acepta paquetes cuyo puerto de origen o destino sea 4898. Después imprime el payload cuando contiene datos. Lo que se busca comprobar es que la frase se puede leer porque esta comunicación no utiliza cifrado. El sniffer observa la comunicación; no sustituye al servidor ni al cliente.
-
-\subsection{Códigos utilizados:}
-Se prepararon copias de los archivos del laboratorio en \texttt{Tarea5/code}. En el sniffer se cambió el filtro de 8080 a 4898, como indica la tarea. Además de eso, se agregaron comprobaciones de longitud y memoria antes de analizar las cabeceras. No se realiza reconstrucción de flujos TCP ni de fragmentos IPv4.
-
-En el servidor 04 se cambió el puerto fijo por un argumento de la terminal. En el cliente y el servidor se revisan los errores y se conserva la frase original: \texttt{El mensaje del servidor es: Conexion exitosa!}. Los archivos originales del laboratorio no se modificaron.
-
-\section{Equipo para realizar la prueba}
-La opción recomendada es Ubuntu dentro de UTM en la Mac, utilizando tres terminales normales de la misma máquina virtual. También se puede usar Linux nativo o una VM Ubuntu en una PC. En todos esos casos se puede apuntar el cliente a \texttt{127.0.0.1}.
-
-Por otra parte, este sniffer no se ejecuta directamente en macOS, porque \texttt{AF\_PACKET} y \texttt{linux/if\_packet.h} pertenecen a Linux. No es necesario utilizar otro equipo ni conectarse al servidor del profesor para esta práctica.
-
-\section{Procedimiento en Ubuntu}
-Los comandos se escriben uno por uno. Primero se copia la carpeta \texttt{Tarea5} al repositorio dentro de Ubuntu. La ruta de los ejemplos siguientes se debe ajustar si el repositorio está en otra ubicación.
-
-Si faltan el compilador o las herramientas de red, se pueden instalar con:
+\section{Preparación del sniffer}
+Primero se revisaron las interfaces de red y se activó el modo promiscuo en \texttt{lo}, ya que el cliente y el servidor se ejecutaron en el mismo equipo. En la terminal con permisos de root se utilizaron los siguientes comandos:
 \begin{lstlisting}[style=output]
-sudo apt update
-sudo apt install build-essential iproute2 net-tools
-\end{lstlisting}
-
-\subsection{Terminal 1: activar y ejecutar el sniffer:}
-Antes de realizar el cambio se consulta el estado de \texttt{lo}, para poder regresarlo a su condición inicial al terminar. Después se activa el modo promiscuo y se comprueba con \texttt{ifconfig}, como se pide en la guía.
-\begin{lstlisting}[style=output]
-cd ~/Documentos/Cliente-Servidor/Tarea5/code
-ip link show lo
-sudo ip link set lo promisc on
+ip -br link
+ip link set lo promisc on
 ifconfig lo
-gcc -Wall -Wextra sniffer.c -o sniffer
-sudo ./sniffer
+gcc sniffer.c -o sniffer
+./sniffer
 \end{lstlisting}
-El comando \texttt{ifconfig lo} debe mostrar \texttt{PROMISC}. Se deja el sniffer abierto antes de iniciar la comunicación. Los permisos de administrador permiten crear el socket en crudo.
 
-\captura{configuracion.png}{Configuración de la interfaz lo y comprobación del modo promiscuo.}
+\captura{snifferpreparacion.png}{Preparación de la interfaz lo y comprobación del modo promiscuo en Linux.}
 
-\subsection{Terminal 2: levantar el servidor:}
-En una segunda terminal se compila el servidor y se pasa el puerto 4898 como argumento:
+Lo que vemos aquí es que \texttt{ifconfig lo} muestra la bandera \texttt{PROMISC} y la dirección \texttt{127.0.0.1}. Después se levantó el sniffer en esa misma terminal para esperar el tráfico del puerto 4898.
+
+\newpage
+\section{Prueba con el programa 04}
+Para esta primera prueba se utilizó el servidor que envía automáticamente una frase al cliente. Se compiló cada programa por separado y los ejecutables se nombraron \texttt{servidor} y \texttt{cliente}. Con el sniffer activo, se levantó primero el servidor y después se ejecutó el cliente en otra terminal:
 \begin{lstlisting}[style=output]
-cd ~/Documentos/Cliente-Servidor/Tarea5/code
-gcc -Wall -Wextra programa04_servidor_internet.c -o programa04_servidor_internet
-./programa04_servidor_internet 4898
+./servidor 4898
+./cliente 127.0.0.1 4898
 \end{lstlisting}
-El servidor queda esperando una conexión. Al conectarse el cliente, envía la frase y termina. Para repetir la prueba se debe volver a ejecutar el servidor.
 
-\subsection{Terminal 3: ejecutar el cliente:}
-Por último, se abre otra terminal y se ejecuta:
+\captura{programa04.png}{Prueba del programa 04 con las terminales del servidor, cliente y sniffer.}
+
+Lo que vemos en la terminal de la izquierda es que el servidor aceptó al cliente desde \texttt{127.0.0.1} y envió la frase \texttt{El mensaje del servidor es: Conexion exitosa!}. En la terminal de la derecha, el cliente mostró el mismo mensaje y registró 46 bytes recibidos. Después ambos programas terminaron.
+
+Por otra parte, en la terminal del sniffer aparece esa misma frase dentro del payload. El puerto de origen fue 4898 y el de destino 48964, que corresponde al puerto del cliente en esta conexión. Con esto se comprobó que el mensaje enviado por el servidor se podía leer en texto plano.
+
+Además de eso, la dirección MAC aparece con ceros y el paquete se muestra dos veces. Esto corresponde a la captura en loopback; no significa que el servidor haya ejecutado dos veces el envío de la frase.
+
+\newpage
+\section{Prueba con el programa 05}
+Ahora bien, para la segunda prueba se utilizó el par de programas 05, donde el cliente y el servidor pueden intercambiar varios mensajes. Se compilaron estos archivos para generar nuevamente \texttt{servidor} y \texttt{cliente}, y se mantuvo el mismo puerto:
 \begin{lstlisting}[style=output]
-cd ~/Documentos/Cliente-Servidor/Tarea5/code
-gcc -Wall -Wextra programa04_cliente_internet.c -o programa04_cliente_internet
-./programa04_cliente_internet 127.0.0.1 4898
+gcc programa05_servidor_internet.c -o servidor
+gcc programa05_cliente_internet.c -o cliente
+./servidor 4898
+./cliente 127.0.0.1 4898
 \end{lstlisting}
-Al presionar Enter se realiza la conexión. En este ejemplo no se escribe un nombre desde el teclado, ya que el servidor envía automáticamente la frase original del programa 04.
+Los comandos del servidor y del cliente se ejecutaron en terminales distintas. El sniffer permaneció en una tercera terminal con permisos de root.
 
-\section{Resultado esperado y evidencia}
-Para el caso de esta prueba, el cliente debe imprimir la frase que recibe del servidor. Al mismo tiempo, el sniffer debe mostrar la MAC, la IP de origen, los puertos y el texto dentro del payload. En el segmento enviado por el servidor, el puerto de origen debe ser 4898.
+\captura{programa05.png}{Intercambio de mensajes con el programa 05 y captura del mensaje Hola en el sniffer.}
 
-Como se utiliza loopback, las MAC pueden aparecer con ceros y el sniffer puede mostrar copias del mismo paquete. Además de eso, el mensaje podría llegar en varios segmentos. Esto se debe revisar en la captura real, sin asumir que cada impresión corresponde a un envío nuevo de la aplicación.
+Para el caso de esta prueba, el cliente inició con \texttt{Hola} y el servidor respondió \texttt{Quien eres?}. Después se envió \texttt{Soy Angel Husiel Lara Hernandez}, a lo que el servidor respondió \texttt{Esta es la Tarea 5?}. El cliente contestó \texttt{Si es la Tarea 5} y recibió \texttt{perfecto}.
 
-La guía solicita una captura de las tres terminales. Se deben acomodar juntas y conservar visibles la frase enviada, la frase recibida y el payload del sniffer. El cliente y el servidor pueden haber terminado; las ventanas se mantienen abiertas con sus salidas.
+Lo que vemos en el sniffer es el mensaje \texttt{Hola} dentro del payload, con IP de origen \texttt{127.0.0.1}, puerto de origen 51008 y puerto de destino 4898. En este caso se capturó un mensaje enviado del cliente hacia el servidor, a diferencia de la prueba anterior.
 
-\captura{prueba_tres_terminales.png}{Evidencia pendiente: sniffer, servidor y cliente en tres terminales de Linux.}
+Por último, el cliente escribió \texttt{adios} y recibió \texttt{respuesta automatica}, con lo que cerró su conexión. El servidor del programa 05 está preparado para regresar a esperar otro cliente después de terminar ese intercambio.
 
-\subsection{Finalización de la prueba:}
-Después de guardar la captura se detiene el sniffer con Ctrl+C. Si \texttt{lo} inicialmente no estaba en modo promiscuo, se restaura de la siguiente manera:
-\begin{lstlisting}[style=output]
-sudo ip link set lo promisc off
-ip link show lo
-\end{lstlisting}
-Si el modo promiscuo ya estaba activo antes de la práctica, se conserva ese estado.
 
-\section{Consideraciones para varios equipos}
-La alternativa más sencilla es colocar el servidor y el sniffer en el mismo Linux y ejecutar el cliente desde otro equipo de la red, utilizando la IP del servidor. En ese caso se activa el modo promiscuo en la interfaz de red correspondiente, no en \texttt{lo}.
-
-No obstante, si el sniffer se coloca en una tercera máquina, activar el modo promiscuo no garantiza que el switch le entregue el tráfico entre los otros dos equipos. La red virtual o un puerto espejo debe permitir que esas tramas lleguen al observador. Por este motivo se recomienda completar primero la prueba en una sola VM.
-
-\section{Comprobaciones previas}
-El cliente y el servidor se compilaron en la Mac sin advertencias y se probaron en localhost. Se recibieron los 46 bytes de la frase original y ambos terminaron correctamente. Esta comprobación verifica la comunicación TCP; no reemplaza la ejecución del sniffer ni la evidencia de las tres terminales en Linux.
-
-\section{Referencias}
-\begin{enumerate}
-\item Guía de la Tarea 5.\\
-\url{https://cromanzamitiz.github.io/arquitectura-cliente-servidor/tema3/Tarea_5.pdf}
-\item Material de teoría recomendado por el profesor.\\
-\url{https://cromanzamitiz.github.io/arquitectura-cliente-servidor/tema3/Clase_Sniffer_Redes_y_Cliente_Servidor.pdf}
-\item Manual de Linux: sockets de paquetes y permisos.\\
-\url{https://man7.org/linux/man-pages/man7/packet.7.html}
-\end{enumerate}
 \end{document}

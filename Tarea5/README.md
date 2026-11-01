@@ -1,14 +1,13 @@
-# Tarea 5: sniffer de red
+# Tarea 5: sniffer de red en Linux
 
-Para el caso de esta tarea se utilizan el sniffer y el par de programas 04 del tema 3. La intención es que el cliente reciba una frase del servidor y que, al mismo tiempo, el sniffer permita ver ese texto dentro de un segmento TCP.
+Para el caso de esta tarea se realizaron dos pruebas en Linux, utilizando el sniffer y los pares cliente-servidor 04 y 05 del tema 3. Los tres procesos se ejecutaron en el mismo equipo, con la dirección 127.0.0.1 y el puerto 4898.
 
-- `code/sniffer.c`: copia del laboratorio con el filtro ajustado de 8080 a 4898, como pide la consigna. Conserva `AF_PACKET`, `SOCK_RAW`, el análisis Ethernet/IPv4/TCP y la impresión del payload. Se revisa la reserva de memoria y el tamaño de las cabeceras, se omiten fragmentos IPv4 y se calcula el payload con la longitud IPv4 para no incluir relleno Ethernet. Las cabeceras IP y TCP se copian a estructuras alineadas para equipos ARM. No reconstruye flujos TCP ni analiza VLAN, IPv6 o interfaces con formatos distintos de Ethernet/loopback Linux.
-- `code/programa04_servidor_internet.c`: adaptación del ejemplo 04. Recibe el puerto como argumento y conserva la frase original. Usa `int main`, `socklen_t`, comprobación de errores, `SO_REUSEADDR`, envío completo e impresión de IP con `inet_ntop()` en lugar de depender de DNS inverso.
-- `code/programa04_cliente_internet.c`: adaptación del ejemplo 04. Valida la IPv4 y el puerto, recibe hasta el cierre e imprime la frase. No solicita un nombre como el cliente del examen.
-- `main.tex`, `Portada.tex` y `portada_img/`: documento con el formato de las tareas anteriores. Es un borrador hasta realizar la prueba e integrar la captura.
-- `PRUEBAS.md`: comandos manuales, equipos compatibles, resultados esperados y solución de problemas.
-- `Consigna_Tarea_5.pdf`: copia de la consigna proporcionada.
+El documento principal es `main.tex`, con su portada en `Portada.tex`. Incluye la preparación de la interfaz, las dos pruebas, sus resultados y las tres capturas originales:
 
-Los originales de `LaboratorioVirtual` permanecen sin modificar. No hay scripts de automatización. Los ejecutables se generan en Linux y están excluidos de Git.
+- `img/snifferpreparacion.png`: interfaz `lo` con la bandera `PROMISC`.
+- `img/programa04.png`: frase automática del servidor, 46 bytes recibidos y el mismo texto en el payload del sniffer.
+- `img/programa05.png`: conversación entre cliente y servidor, cierre con `adios` y captura de `Hola` en el sniffer.
 
-La opción recomendada es **Ubuntu en UTM, tres terminales y 127.0.0.1**. El sniffer de esta práctica no compila directamente en macOS porque utiliza la interfaz de paquetes de Linux. Ver `PRUEBAS.md` antes de ejecutarlo.
+En `code/` se conservan el sniffer y las fuentes del par 05. Los ejemplos base del par 04 están en `LaboratorioVirtual/tema3/`. Los ejecutables de ambas pruebas se nombraron `servidor` y `cliente`; la compilación del par 05 sustituyó los ejecutables utilizados para la primera prueba.
+
+El filtro del sniffer utiliza el puerto 4898. El reporte describe lo visible en las capturas, sin presentar resultados pendientes como si ya hubieran ocurrido. `PRUEBAS.md` conserva el registro de los pasos en Linux y la forma de repetir la prueba con el par 05.
