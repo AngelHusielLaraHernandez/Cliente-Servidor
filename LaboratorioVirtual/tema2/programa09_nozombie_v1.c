@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <wait.h>
 #include <signal.h>
 
 int main ()
